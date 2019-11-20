@@ -1,25 +1,35 @@
-NAME = libf
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-SRC = main.c og.c tabber.c print_sol.c tools.c not_a_solver.c solver3_0.c
-OBJS = ${SRC:.c=.o}
-LIB = library.h
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: egallego <egallego@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/11/18 12:48:33 by egallego          #+#    #+#              #
+#    Updated: 2019/11/20 21:47:01 by egallego         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-.c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+NAME = libft.a
+CC = gcc -c
+CFLAGS = -Wall -Wextra -Werror
+SRC = ft.memset.c 
+OBJS = ${SRC:.c=.o}
+RM = rm -rf
+LIB	= ar rc
+RLIB = ranlib
 
 all: 		${NAME}
 
-$(NAME):	${OBJ} ${LIB}
-			${CC} -o ${NAME} ${OBJ}
+$(NAME):	${OBJ}
+			${CC} ${CFLAGS} -o ${NAME} ${OBJ}
 
 clean:
-			rm -f $(OBJS)
+			${RM} $(OBJS)
 
 fclean:		clean
-			rm -f $(NAME)
+			${RM} $(NAME)
 
-norme:
-			norminette ${SRC} ${LIB}
+re:			fclean all
 
-.PHONY:		clean fclean norme
+.PHONY:		clean fclean
