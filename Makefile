@@ -6,24 +6,22 @@
 #    By: egallego <egallego@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/18 12:48:33 by egallego          #+#    #+#              #
-#    Updated: 2019/11/20 21:47:01 by egallego         ###   ########.fr        #
+#    Updated: 2019/11/21 17:44:19 by egallego         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc -c
 CFLAGS = -Wall -Wextra -Werror
-SRC = ft.memset.c 
-OBJS = ${SRC:.c=.o}
+SRCS = ft_memset.c 
+OBJS = ${SRCS:.c=.o};
 RM = rm -rf
-LIB	= ar rc
-RLIB = ranlib
 
 all: 		${NAME}
 
-$(NAME):	${OBJ}
-			${CC} ${CFLAGS} -o ${NAME} ${OBJ}
-
+$(NAME):	${SRCS}
+			${CC} ${CFLAGS} ${SRCS} 
+			ar rc ${NAME} ${OBJS}
 clean:
 			${RM} $(OBJS)
 
@@ -32,4 +30,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		clean fclean
+.PHONY:		all clean fclean
