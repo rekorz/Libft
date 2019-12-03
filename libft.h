@@ -6,7 +6,7 @@
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 21:36:20 by egallego          #+#    #+#             */
-/*   Updated: 2019/12/03 16:32:53 by egallego         ###   ########.fr       */
+/*   Updated: 2019/12/03 18:32:02 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void 		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void		*ft_memmove(void *dst, const void *src, size_t len);
 
 #endif
