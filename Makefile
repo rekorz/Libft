@@ -6,14 +6,14 @@
 #    By: egallego <egallego@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/18 12:48:33 by egallego          #+#    #+#              #
-#    Updated: 2019/12/08 17:07:17 by egallego         ###   ########.fr        #
+#    Updated: 2019/12/09 18:41:20 by egallego         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc -c
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_memset.c ft_memcpy.c ft_bzero.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c
+SRCS = ft_memset.c ft_memcpy.c ft_bzero.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c
 OBJS = ${SRCS:.c=.o};
 RM = rm -rf
 
