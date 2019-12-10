@@ -6,7 +6,7 @@
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 15:33:41 by egallego          #+#    #+#             */
-/*   Updated: 2019/12/09 18:42:00 by egallego         ###   ########.fr       */
+/*   Updated: 2019/12/10 11:42:29 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,19 @@
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t i;
-	size_t j;
-	size_t h;
-	size_t k;
+	size_t n;
 
-	i = 0;
-	j = 0;
-
-	h = ft_strlen(src);
-	k = ft_strlen(dst);
-	if (dstsize > (h + k - 1))
-		return (0);
-	while (dst[i] != '\0')
+	i = ft_strlen(dst);
+	if (dstsize > i)
 	{
-		i++;
+		n = 0;
+		while (--dstsize - i && *(src + n))
+		{
+			*(dst + i + n) = *(src + n);
+			++n;
+		}
+		*(dst + i + n) = '\0';
+		return (i + ft_strlen(src));
 	}
-	i++;
-	while (src[j] != '\0')
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	i++;
-	dst[i] = '\0';
-	return (h + k);
+	return (dstsize + ft_strlen(src));
 }
