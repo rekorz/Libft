@@ -6,7 +6,7 @@
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 21:36:20 by egallego          #+#    #+#             */
-/*   Updated: 2019/12/09 15:22:04 by egallego         ###   ########.fr       */
+/*   Updated: 2019/12/10 12:14:17 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+char		*ft_strchr(const char *s, int c);
 
 #endif
