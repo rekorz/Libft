@@ -6,13 +6,14 @@
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 21:36:20 by egallego          #+#    #+#             */
-/*   Updated: 2019/12/26 13:27:58 by egallego         ###   ########.fr       */
+/*   Updated: 2019/12/26 19:46:40 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <ctype.h>
 
 void        *ft_memset(void *b, int c, size_t len);
 void 		ft_bzero(void *s, size_t n);
@@ -30,5 +31,7 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int 		ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_atoi(const char *str);
+int			ft_isalpha(int c);
+int			ft_isdigit(int c);
 
 #endif
