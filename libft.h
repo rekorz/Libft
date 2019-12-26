@@ -6,7 +6,7 @@
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 21:36:20 by egallego          #+#    #+#             */
-/*   Updated: 2019/12/20 17:45:34 by egallego         ###   ########.fr       */
+/*   Updated: 2019/12/20 19:47:02 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
