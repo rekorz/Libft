@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/20 17:28:31 by egallego          #+#    #+#             */
-/*   Updated: 2020/01/08 18:22:30 by egallego         ###   ########.fr       */
+/*   Created: 2020/01/08 17:27:22 by egallego          #+#    #+#             */
+/*   Updated: 2020/01/08 17:34:21 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strrchr(const char *s, int c)
+static void		put_next_nbr(unsigned int n, int fd)
 {
-	size_t	n;
-	char	*ptr;
+	if (n > 10)
+		put_next_nbr(n / 10, fd);
+	ft_putchar_fd(n % 10 + '0', fd);
+}
 
-	n = (ft_strlen(s) + 1);
-	ptr = (char *)s;
-	while (n--)
+void			ft_putnbr_fd(int n, int fd)
+{
+	unsigned int	nb;
+
+	nb = n;
+	if (n < 0)
 	{
-		if (ptr[n] == (unsigned char)c)
-			return (&ptr[n]);
+		nb *= (-1);
+		ft_putchar_fd('-', fd);
 	}
-	return (NULL);
+	put_next_nbr(nb, fd);
 }

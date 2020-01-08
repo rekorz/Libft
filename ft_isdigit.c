@@ -6,13 +6,15 @@
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/26 19:35:44 by egallego          #+#    #+#             */
-/*   Updated: 2019/12/26 19:50:01 by egallego         ###   ########.fr       */
+/*   Updated: 2020/01/08 17:38:25 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isdigit(int c)
 {
-	if ((char)c >= '0' && (char)c <= '9')
+	if (c >= '0' && c <= '9')
 		return (c);
 	else
 		return (0);

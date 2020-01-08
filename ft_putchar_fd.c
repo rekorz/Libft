@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/20 17:28:31 by egallego          #+#    #+#             */
-/*   Updated: 2020/01/08 18:22:30 by egallego         ###   ########.fr       */
+/*   Created: 2020/01/08 17:20:13 by egallego          #+#    #+#             */
+/*   Updated: 2020/01/08 17:21:04 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char		*ft_strrchr(const char *s, int c)
+void		ft_putchar_fd(char c, int fd)
 {
-	size_t	n;
-	char	*ptr;
-
-	n = (ft_strlen(s) + 1);
-	ptr = (char *)s;
-	while (n--)
-	{
-		if (ptr[n] == (unsigned char)c)
-			return (&ptr[n]);
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/20 17:28:31 by egallego          #+#    #+#             */
-/*   Updated: 2020/01/08 18:22:30 by egallego         ###   ########.fr       */
+/*   Created: 2020/01/08 16:58:16 by egallego          #+#    #+#             */
+/*   Updated: 2020/01/08 16:59:06 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strrchr(const char *s, int c)
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	n;
-	char	*ptr;
+	char			*str;
+	unsigned int	i;
 
-	n = (ft_strlen(s) + 1);
-	ptr = (char *)s;
-	while (n--)
+	if (!s || !f)
+		return (NULL);
+	if (!(str = ft_calloc(ft_strlen(s) + 1, sizeof(*str))))
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		if (ptr[n] == (unsigned char)c)
-			return (&ptr[n]);
+		str[i] = (*f)(i, s[i]);
+		i++;
 	}
-	return (NULL);
+	return (str);
 }

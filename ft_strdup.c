@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/20 17:28:31 by egallego          #+#    #+#             */
-/*   Updated: 2020/01/08 18:22:30 by egallego         ###   ########.fr       */
+/*   Created: 2020/01/08 15:33:00 by egallego          #+#    #+#             */
+/*   Updated: 2020/01/08 15:43:45 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strrchr(const char *s, int c)
+char		*ft_strdup(const char *s1)
 {
-	size_t	n;
-	char	*ptr;
+	char	*aux;
 
-	n = (ft_strlen(s) + 1);
-	ptr = (char *)s;
-	while (n--)
-	{
-		if (ptr[n] == (unsigned char)c)
-			return (&ptr[n]);
-	}
-	return (NULL);
+	aux = malloc(ft_strlen(s1) + 1);
+	if (!aux)
+		return (NULL);
+	return (ft_memcpy(aux, s1, ft_strlen(s1) + 1));
 }

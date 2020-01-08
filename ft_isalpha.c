@@ -6,14 +6,14 @@
 /*   By: egallego <egallego@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 18:10:32 by egallego          #+#    #+#             */
-/*   Updated: 2019/12/26 19:19:06 by egallego         ###   ########.fr       */
+/*   Updated: 2020/01/08 17:37:56 by egallego         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isalpha(int c)
 {
-	if (((char)c >= 'A' && (char)c <= 'Z') ||
-			((char)c >= 'a' && (char)c <= 'z'))
+	if ((c >= 'A' && c <= 'Z') ||
+			(c >= 'a' && c <= 'z'))
 		return (c);
 	else
 		return (0);
